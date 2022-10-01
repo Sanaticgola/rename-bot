@@ -8,13 +8,13 @@ YOUTUBE = 'TechnologyRk'
 async def start(client,message):
 	insert(int(message.chat.id))
 	await message.reply_text(text =f"""
-	Hello {message.from_user.first_name }
-	__I am file renamer bot, Please sent any telegram 
-	**Document Or Video** and enter new filenameto rename it__
+	HEY ROMEO 🌀 {message.from_user.first_name }
+	__I AM A FAST FILE RENAMER BOT, SEND ANY TELEGRAM 
+	**DOCUMENT OR VIDEO** THEN ENTER  NEW FILENAME ◾__
 	""",reply_to_message_id = message.message_id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url=f"https://t.me/{SUPPORT_CH}") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url=f"https://youtube.com/c/{YOUTUBE}") ]  ]))
+	 [[ InlineKeyboardButton("💠Support💠" ,url=f"https://t.me/Sanaticsmovies") ], 
+	[InlineKeyboardButton("💠SUBSCRIBE💠", url=f"https://t.me/Sanaticsmovies") ]  ]))
 
 
 @Client.on_message(filters.private &( filters.document | filters.audio | filters.video ))
@@ -25,7 +25,7 @@ async def send_doc(client,message):
        filesize = humanize.naturalsize(file.file_size)
        fileid = file.file_id
        await message.reply_text(
-       f"""__What do you want me to do with this file?__\n**File Name** :- {filename}\n**File Size** :- {filesize}"""
+       f"""__WHAT YOU WANT TO DO WITH THIS FILE?__\n**File Name** :- {filename}\n**File Size** :- {filesize}"""
        ,reply_to_message_id = message.message_id,
-       reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("📝 Rename ",callback_data = "rename")
-       ,InlineKeyboardButton("Cancel✖️",callback_data = "cancel")  ]]))
+       reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("✏ RENAME ✏",callback_data = "rename")
+       ,InlineKeyboardButton("❌ CANCEL ✖️",callback_data = "cancel")  ]]))
